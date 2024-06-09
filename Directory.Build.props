@@ -1,0 +1,43 @@
+<Project>
+  <PropertyGroup>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>10</LangVersion>
+    <PackageId>$(AssemblyName)</PackageId>
+    <PackageIcon>packageIcon.png</PackageIcon>
+    <Authors>zhenlei520</Authors>
+    <Copyright>© zhenlei520 Corporation. All rights reserved.</Copyright>
+    <PackageProjectUrl>https://www.nuget.org/packages/$(PackageId)</PackageProjectUrl>
+    <PackageIconUrl>packageIcon.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/zhenlei520/SpeedBoot.DynamicTemplates</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <RepositoryRoot>$(MSBuildThisFileDirectory)</RepositoryRoot>
+    <RepoRelativeProjectDir>$([MSBuild]::MakeRelative($(RepositoryRoot), $(MSBuildProjectDirectory)))</RepoRelativeProjectDir>
+    <IsProductComponent>false</IsProductComponent>
+    <IsTestProject Condition="$(MSBuildProjectName.EndsWith('Tests')) OR $(MSBuildProjectName.EndsWith('.Test'))">true</IsTestProject>
+    <IncludeSymbols>true</IncludeSymbols>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <LangVersion>latest</LangVersion>
+
+    <TargetFrameworkVersion>net8.0</TargetFrameworkVersion>
+    <TargetFrameworkAllVersion>netstandard2.0;netstandard2.1;netcoreapp2.1;netcoreapp2.2;netcoreapp3.0;netcoreapp3.1;net5.0;net6.0;net7.0;net8.0;</TargetFrameworkAllVersion>
+    <TargetFrameworkNetVersion>netstandard2.1;netcoreapp3.1;net5.0;net6.0;net7.0;net8.0;</TargetFrameworkNetVersion>
+    <MicrosoftPackageVersion>6.0.0</MicrosoftPackageVersion>
+    <MSTestPackageVersion>2.2.3</MSTestPackageVersion>
+    <MicrosoftTeskSdkPackageVersion>16.9.4</MicrosoftTeskSdkPackageVersion>
+    <CoverletPackageVersion>3.0.2</CoverletPackageVersion>
+    <SpeedBootPackageVersion>0.0.1-preview.*</SpeedBootPackageVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="$(RepositoryRoot)packageIcon.png">
+      <Pack>True</Pack>
+      <PackagePath/>
+    </None>
+    <None Include="$(RepositoryRoot)LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath/>
+    </None>
+  </ItemGroup>
+</Project>

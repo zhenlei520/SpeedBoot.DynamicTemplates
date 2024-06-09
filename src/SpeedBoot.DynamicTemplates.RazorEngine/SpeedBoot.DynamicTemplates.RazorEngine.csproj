@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+      <TargetFrameworks>$(TargetFrameworkNetVersion)</TargetFrameworks>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\SpeedBoot.DynamicTemplates.Abstracts\SpeedBoot.DynamicTemplates.Abstracts.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="RazorEngineCore" Version="2024.4.1" />
+      <PackageReference Include="SpeedBoot.Extensions.DependencyInjection" Version="$(SpeedBootPackageVersion)" />
+    </ItemGroup>
+
+</Project>

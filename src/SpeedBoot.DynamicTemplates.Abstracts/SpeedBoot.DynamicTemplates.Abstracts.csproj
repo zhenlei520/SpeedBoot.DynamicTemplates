@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+      <TargetFrameworks>$(TargetFrameworkNetVersion)</TargetFrameworks>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="Enumerations\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="SpeedBoot.Extensions.DependencyInjection.Abstractions" Version="$(SpeedBootPackageVersion)" />
+    </ItemGroup>
+
+</Project>
