@@ -7,25 +7,23 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SpeedBoot.DynamicTemplates.Abstracts\SpeedBoot.DynamicTemplates.Abstracts.csproj"/>
-    <ProjectReference Include="..\SpeedBoot.DynamicTemplates\SpeedBoot.DynamicTemplates.csproj"/>
+    <ProjectReference Include="..\SpeedBoot.DynamicTemplates.Abstracts\SpeedBoot.DynamicTemplates.Abstracts.csproj" />
   </ItemGroup>
-
+  
   <ItemGroup>
-    <PackageReference Include="RazorEngineCore" Version="2024.4.1"/>
     <PackageReference Include="SpeedBoot.Extensions.DependencyInjection" Version="$(SpeedBootPackageVersion)"/>
   </ItemGroup>
-
+  
   <ItemGroup>
     <Compile Remove="Components\**" />
   </ItemGroup>
-
+  
   <ItemGroup>
     <EmbeddedResource Remove="Components\**" />
   </ItemGroup>
-
+  
   <ItemGroup>
     <None Remove="Components\**" />
   </ItemGroup>
-
+  
 </Project>

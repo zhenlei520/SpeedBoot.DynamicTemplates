@@ -4,3 +4,6 @@ global using RazorEngineCore;
 global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.Extensions.DependencyInjection.Extensions;
 global using SpeedBoot.DynamicTemplates.RazorEngine;
+global using System.Reflection;
+global using SpeedBoot.DynamicTemplates.RazorEngine.Constants;
+global using SpeedBoot.Core;

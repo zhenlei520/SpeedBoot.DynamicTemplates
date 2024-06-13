@@ -3,7 +3,7 @@
 
 namespace SpeedBoot.DynamicTemplates.Abstracts;
 
-public interface ITemplateProvider : ISingletonDependency
+public interface ITemplateProvider : IService
 {
     void Set<TTemplate>(TTemplate template)
         where TTemplate : Template;

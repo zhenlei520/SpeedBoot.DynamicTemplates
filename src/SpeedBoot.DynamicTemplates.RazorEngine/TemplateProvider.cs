@@ -14,6 +14,8 @@ public class TemplateProvider : ITemplateProvider
         _templateData = new CustomConcurrentDictionary<string, IRazorEngineCompiledTemplate>();
     }
 
+    public string Key => RazorEngineGlobalConfig.UniqueId;
+
     public void Set<TTemplate>(TTemplate template) where TTemplate : Template
     {
         _templateData.AddOrUpdate(template.Id, id =>

@@ -5,6 +5,10 @@ namespace SpeedBoot.DynamicTemplates.Abstracts;
 
 public class Template
 {
+    /// <summary>
+    /// template id
+    /// No Duplicates Allowed
+    /// </summary>
     public string Id { get; set; }
 
     public string Content { get; set; }
