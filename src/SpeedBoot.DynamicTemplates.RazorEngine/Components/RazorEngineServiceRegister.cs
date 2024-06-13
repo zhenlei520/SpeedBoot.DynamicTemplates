@@ -3,10 +3,10 @@
 
 namespace SpeedBoot.DynamicTemplates.RazorEngine;
 
-public class RazorEngineServiceRegister: ServiceRegisterComponentBase
+public class RazorEngineServiceRegister : ServiceRegisterComponentBase
 {
     public override void ConfigureServices(IServiceCollection services)
     {
-        // services.AddRazorEngine();
+        services.AddDynamicTemplate(builder => builder.UseRazorEngine());
     }
 }

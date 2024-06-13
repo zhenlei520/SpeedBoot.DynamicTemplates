@@ -9,21 +9,9 @@
   <ItemGroup>
     <ProjectReference Include="..\SpeedBoot.DynamicTemplates.Abstracts\SpeedBoot.DynamicTemplates.Abstracts.csproj" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <PackageReference Include="SpeedBoot.Extensions.DependencyInjection" Version="$(SpeedBootPackageVersion)"/>
   </ItemGroup>
-  
-  <ItemGroup>
-    <Compile Remove="Components\**" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <EmbeddedResource Remove="Components\**" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <None Remove="Components\**" />
-  </ItemGroup>
-  
+
 </Project>

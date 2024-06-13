@@ -7,3 +7,4 @@ global using SpeedBoot.DynamicTemplates.RazorEngine;
 global using System.Reflection;
 global using SpeedBoot.DynamicTemplates.RazorEngine.Constants;
 global using SpeedBoot.Core;
+global using SpeedBoot.DynamicTemplates.Extensions;

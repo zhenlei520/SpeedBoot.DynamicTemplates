@@ -13,24 +13,13 @@ public class Template
 
     public string Content { get; set; }
 
-    /// <summary>
-    /// Extension Assemblies
-    /// </summary>
-    public Assembly[]? Assemblies { get; set; } = null;
-
     public Template()
     {
     }
 
-    public Template(string id, string content)
-        : this(id, content, null)
-    {
-    }
-
-    public Template(string id, string content, Assembly[]? assemblies)
+    public Template(string id, string content) : this()
     {
         Id = id;
         Content = content;
-        Assemblies = assemblies;
     }
 }

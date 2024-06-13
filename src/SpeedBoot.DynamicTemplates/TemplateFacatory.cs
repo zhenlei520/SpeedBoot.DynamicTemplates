@@ -13,7 +13,7 @@ public class TemplateFacatory : ITemplateFacatory
     }
 
     public ITemplateProvider Create()
-        => _serviceProvider.GetRequiredService<ITemplateProvider>();
+        => _serviceProvider.GetRequiredService<ITemplateProvider>(p => true);
 
     public ITemplateProvider Create(string key)
     {

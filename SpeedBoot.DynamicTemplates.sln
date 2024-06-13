@@ -18,8 +18,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{63DB99DD-B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedBoot.DynamicTemplates.RazorEngine.Tests", "test\SpeedBoot.DynamicTemplates.RazorEngine.Tests\SpeedBoot.DynamicTemplates.RazorEngine.Tests.csproj", "{D357C18E-62B8-4F52-8F79-7FE4BA014652}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedBoot.DynamicTemplates.RazorEngine.NetCore", "src\SpeedBoot.DynamicTemplates.RazorEngine.NetCore\SpeedBoot.DynamicTemplates.RazorEngine.NetCore.csproj", "{3C2BB467-6069-4B62-A61B-4C687F8A8CA1}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedBoot.DynamicTemplates", "src\SpeedBoot.DynamicTemplates\SpeedBoot.DynamicTemplates.csproj", "{689D59BA-3121-4936-B346-3F7377008DE2}"
 EndProject
 Global
@@ -31,7 +29,6 @@ Global
 		{330D3518-38D4-4D46-8DF4-787DC1563693} = {41A00C7A-91D6-48D1-8081-BCA625729DB7}
 		{7A5E3EE8-F03A-49A9-AC07-473BCCB49E69} = {41A00C7A-91D6-48D1-8081-BCA625729DB7}
 		{D357C18E-62B8-4F52-8F79-7FE4BA014652} = {63DB99DD-BB5E-4EC8-9395-D721FD9AAA0C}
-		{3C2BB467-6069-4B62-A61B-4C687F8A8CA1} = {41A00C7A-91D6-48D1-8081-BCA625729DB7}
 		{689D59BA-3121-4936-B346-3F7377008DE2} = {41A00C7A-91D6-48D1-8081-BCA625729DB7}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
@@ -47,10 +44,6 @@ Global
 		{D357C18E-62B8-4F52-8F79-7FE4BA014652}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D357C18E-62B8-4F52-8F79-7FE4BA014652}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D357C18E-62B8-4F52-8F79-7FE4BA014652}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3C2BB467-6069-4B62-A61B-4C687F8A8CA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3C2BB467-6069-4B62-A61B-4C687F8A8CA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3C2BB467-6069-4B62-A61B-4C687F8A8CA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3C2BB467-6069-4B62-A61B-4C687F8A8CA1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{689D59BA-3121-4936-B346-3F7377008DE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{689D59BA-3121-4936-B346-3F7377008DE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{689D59BA-3121-4936-B346-3F7377008DE2}.Release|Any CPU.ActiveCfg = Release|Any CPU

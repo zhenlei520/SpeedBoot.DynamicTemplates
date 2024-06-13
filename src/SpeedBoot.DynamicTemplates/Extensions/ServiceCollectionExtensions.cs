@@ -5,13 +5,15 @@ namespace SpeedBoot.DynamicTemplates.Extensions;
 
 public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddDynamicTemplates(this IServiceCollection services, Action<DynamicTemplateBuilder> action)
+    public static IServiceCollection AddDynamicTemplate(
+        this IServiceCollection services,
+        Action<DynamicTemplateBuilder> action)
     {
         if (!ServiceCollectionUtils.TryAdd<RazorEngineProvider>(services))
             return services;
 
-        services.AddSingleton<ITemplateFacatory, TemplateFacatory>();
-        services.AddSingleton<ITemplateProvider>(sp => sp.GetRequiredService<ITemplateFacatory>().Create());
+        services.TryAddSingleton<ITemplateFacatory, TemplateFacatory>();
+        services.TryAddSingleton<ITemplateProvider>(sp => sp.GetRequiredService<ITemplateFacatory>().Create());
         var dynamicTemplateBuilder = new DynamicTemplateBuilder(services);
         action.Invoke(dynamicTemplateBuilder);
         return services;

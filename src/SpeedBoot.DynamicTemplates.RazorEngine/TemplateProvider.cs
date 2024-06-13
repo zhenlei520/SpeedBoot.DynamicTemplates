@@ -5,12 +5,10 @@ namespace SpeedBoot.DynamicTemplates.RazorEngine;
 
 public class TemplateProvider : ITemplateProvider
 {
-    private readonly IRazorEngine _razorEngine;
     private readonly CustomConcurrentDictionary<string, IRazorEngineCompiledTemplate> _templateData;
 
     public TemplateProvider()
     {
-        _razorEngine = new RazorEngineCore.RazorEngine();
         _templateData = new CustomConcurrentDictionary<string, IRazorEngineCompiledTemplate>();
     }
 
@@ -20,11 +18,15 @@ public class TemplateProvider : ITemplateProvider
     {
         _templateData.AddOrUpdate(template.Id, id =>
         {
-            if (template.Assemblies == null)
-                return _razorEngine.Compile(template.Content);
-            return _razorEngine.Compile(template.Content, builder =>
+            var razorEngine = new RazorEngineCore.RazorEngine();
+            if (template is not RazorEngineTemplate razorEngineTemplate)
+                return razorEngine.Compile(template.Content);
+
+            if (razorEngineTemplate.Assemblies == null)
+                return razorEngine.Compile(template.Content);
+            return razorEngine.Compile(template.Content, builder =>
             {
-                foreach (var assembly in template.Assemblies)
+                foreach (var assembly in razorEngineTemplate.Assemblies)
                 {
                     builder.AddAssemblyReference(assembly);
                 }
