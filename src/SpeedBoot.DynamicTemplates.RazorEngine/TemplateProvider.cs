@@ -5,33 +5,20 @@ namespace SpeedBoot.DynamicTemplates.RazorEngine;
 
 public class TemplateProvider : ITemplateProvider
 {
-    private readonly CustomConcurrentDictionary<string, IRazorEngineCompiledTemplate> _templateData;
+    private readonly CustomConcurrentDictionary<string, ITemplateEngineProvider> _data;
 
     public TemplateProvider()
     {
-        _templateData = new CustomConcurrentDictionary<string, IRazorEngineCompiledTemplate>();
+        _data = new CustomConcurrentDictionary<string, ITemplateEngineProvider>();
     }
 
     public string Key => RazorEngineGlobalConfig.UniqueId;
 
     public void Set<TTemplate>(TTemplate template) where TTemplate : Template
     {
-        _templateData.AddOrUpdate(template.Id, id =>
-        {
-            var razorEngine = new RazorEngineCore.RazorEngine();
-            if (template is not RazorEngineTemplate razorEngineTemplate)
-                return razorEngine.Compile(template.Content);
-
-            if (razorEngineTemplate.Assemblies == null)
-                return razorEngine.Compile(template.Content);
-            return razorEngine.Compile(template.Content, builder =>
-            {
-                foreach (var assembly in razorEngineTemplate.Assemblies)
-                {
-                    builder.AddAssemblyReference(assembly);
-                }
-            });
-        });
+        _data.AddOrUpdate(template.Id, id => template is not RazorEngineTemplate razorEngineTemplate ?
+            new TemplateEngineProvider(template) :
+            new TemplateEngineProvider(razorEngineTemplate));
     }
 
     public void SetRange<TTemplate>(IEnumerable<TTemplate> templates) where TTemplate : Template
@@ -49,7 +36,7 @@ public class TemplateProvider : ITemplateProvider
 
     public void Delete(string id)
     {
-        _templateData.Remove(id);
+        _data.Remove(id);
     }
 
     public void DeleteRange(IEnumerable<string> ids)
@@ -62,18 +49,18 @@ public class TemplateProvider : ITemplateProvider
 
     public bool TryGet<TMetadata>(string id, TMetadata metadata, out string? content)
     {
-        if (!_templateData.TryGet(id, out var engineCompiledTemplate))
+        if (!_data.TryGet(id, out var templateEngineProvider))
         {
             content = null;
             return false;
         }
 
-        content = engineCompiledTemplate.Run(metadata);
+        content = templateEngineProvider.Run(metadata);
         return true;
     }
 
     public void Clear()
     {
-        _templateData.Clear();
+        _data.Clear();
     }
 }

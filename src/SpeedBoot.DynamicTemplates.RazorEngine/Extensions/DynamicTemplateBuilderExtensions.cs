@@ -11,6 +11,7 @@ public static class DynamicTemplateBuilderExtensions
             return builder;
 
         builder.Services.AddTransient<ITemplateProvider, TemplateProvider>();
+        builder.Services.AddTransient<ITemplateEngineProvider, TemplateEngineProvider>();
         return builder;
     }
 
