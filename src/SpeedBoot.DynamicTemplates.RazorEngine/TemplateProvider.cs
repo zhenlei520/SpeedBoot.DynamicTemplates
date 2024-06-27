@@ -7,9 +7,9 @@ public class TemplateProvider : ITemplateProvider
 {
     private readonly CustomConcurrentDictionary<string, ITemplateEngineProvider> _data;
 
-    public TemplateProvider()
+    public TemplateProvider(IEqualityComparer<string>? comparer)
     {
-        _data = new CustomConcurrentDictionary<string, ITemplateEngineProvider>();
+        _data = new CustomConcurrentDictionary<string, ITemplateEngineProvider>(comparer);
     }
 
     public string Key => RazorEngineGlobalConfig.UniqueId;

@@ -28,7 +28,7 @@
     <MSTestPackageVersion>2.2.3</MSTestPackageVersion>
     <MicrosoftTeskSdkPackageVersion>16.9.4</MicrosoftTeskSdkPackageVersion>
     <CoverletPackageVersion>3.0.2</CoverletPackageVersion>
-    <SpeedBootPackageVersion>0.0.1-preview.25</SpeedBootPackageVersion>
+    <SpeedBootPackageVersion>0.0.1-preview.34</SpeedBootPackageVersion>
   </PropertyGroup>
   <ItemGroup>
     <None Include="$(RepositoryRoot)packageIcon.png">

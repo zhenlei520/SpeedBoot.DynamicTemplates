@@ -15,7 +15,7 @@ public class TemplateProviderTest : TestBase
         {
             Name = "SpeedBoot"
         };
-        Assert.IsTrue(provider.TryGet(nameof(UserInfo), userInfo,out var content));
+        Assert.IsTrue(provider.TryGet(nameof(UserInfo).ToLower(), userInfo,out var content));
         Assert.AreEqual("Welcome SpeedBoot", content);
     }
 }
